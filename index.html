@@ -1,0 +1,47 @@
+<html>
+  <header>
+    <script src="index.js" defer></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .categoty-section {
+        display: absolute;
+        top: 0;
+        left: 0;
+      }
+      #categories {
+        display: block;
+        list-style: none;
+      }
+      #categories li {
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+      }
+      #categories li img {
+        object-fit: contain;
+        width: 50px;
+        margin-right: 5px;
+      }
+    </style>
+  </header>
+  <body>
+    <div class="category-section">
+      <button onclick="toggleCategory()">Menu</button>
+      <ul id="categories">
+        <!-- <li>
+          <img src="https:\/\/www.themealdb.com\/images\/category\/beef.png" />
+          <p>Beef</p>
+        </li>  -->
+      </ul>
+    </div>
+    <button onclick="alert('Liked')">Like</button>
+    <button onclick="randomMeal()">Random Meal</button>
+    <div class="random-meal">
+      <img src="" />
+      <p></p>
+    </div>
+  </body>
+</html>
