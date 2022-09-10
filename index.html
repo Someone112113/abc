@@ -6,8 +6,17 @@
         margin: 0;
         padding: 0;
       }
-      .categoty-section {
-        display: absolute;
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .category-section {
+        position: absolute;
         top: 0;
         left: 0;
       }
@@ -24,6 +33,31 @@
         object-fit: contain;
         width: 50px;
         margin-right: 5px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .category-section {
+          display: none;
+        }
+      }
+
+      .random-meal {
+        width: 200px;
+        background-color: black;
+        color: white;
+      }
+
+      .random-meal img {
+        width: 100%;
+      }
+
+      .ingredients {
+        display: none;
+        background-color: grey;
+      }
+
+      .random-meal:hover .ingredients {
+        display: block;
       }
     </style>
   </header>
@@ -42,6 +76,7 @@
     <div class="random-meal">
       <img src="" />
       <p></p>
+      <div class="ingredients"></div>
     </div>
   </body>
 </html>
