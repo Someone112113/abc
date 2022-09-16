@@ -10,7 +10,6 @@
       body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         min-height: 100vh;
       }
@@ -42,22 +41,57 @@
       }
 
       .random-meal {
-        width: 200px;
+        width: 70vw;
+        height: 90vh;
         background-color: black;
         color: white;
       }
 
-      .random-meal img {
+      .meal-info {
+        height: 50%;
         width: 100%;
+        display: flex;
+        flex-direction: row;
       }
 
-      .ingredients {
-        display: none;
-        background-color: grey;
-      }
-
-      .random-meal:hover .ingredients {
+      .meal-info img {
+        max-width: 100%;
+        max-height: 100%;
         display: block;
+        margin-left: auto;
+      }
+
+      .meal-info h2 {
+        padding: 5px;
+        margin: auto;
+      }
+
+      .meal-details {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        background-color: brown;
+        display: flex;
+        height: 50%;
+        overflow: auto;
+      }
+
+      .random-meal:hover .meal-details {
+        display: flex;
+      }
+
+      .ingredients,
+      .instructions {
+        padding: 5px;
+      }
+
+      .ingredients ul {
+        list-style-type: circle;
+        padding-left: 10px;
+      }
+
+      .ingredients li {
+        padding: 5px;
       }
     </style>
   </header>
@@ -74,9 +108,15 @@
     <button onclick="alert('Liked')">Like</button>
     <button onclick="randomMeal()">Random Meal</button>
     <div class="random-meal">
-      <img src="" />
-      <p></p>
-      <div class="ingredients"></div>
+      <div class="meal-info">
+        <h2></h2>
+        <img src="" />
+      </div>
+      <div class="meal-details">
+        <div class="ingredients"></div>
+        <hr />
+        <div class="instructions"></div>
+      </div>
     </div>
   </body>
 </html>
