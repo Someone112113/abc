@@ -1,13 +1,19 @@
 function toggleCategory() {
   const categories = document.querySelector("#categories");
-  if (categories.style.display == "none") {
+  //if (window.getComputedStyle(categories).display === "none") {
+  if (categories.style.display != "block") {
     categories.style.display = "block";
   } else {
     categories.style.display = "none";
   }
 }
-function randomMeal() {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+
+async function randomMeal() {
+  const status = document.querySelector("div#status");
+  status.style.backgroundColor = "yellow";
+  status.innerHTML = "loading file";
+
+  await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then((response) => response.json())
     // {
     //   var test = response.json();
@@ -39,6 +45,9 @@ function randomMeal() {
       instruction.innerHTML = meal.strInstructions;
       instructions.appendChild(instruction);
     });
+
+  status.style.backgroundColor = "red";
+  status.innerHTML = "file loaded";
 }
 
 fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
